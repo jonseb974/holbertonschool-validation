@@ -1,8 +1,10 @@
+Publish=hugo
+
 build:
-	hugo
+	$(Publish)
 
 clean:
-	rm -rf dist/*
+	rm -r dist/*
 
 post:
 	$(Publish) new posts/$(POST_NAME).md
