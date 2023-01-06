@@ -1,0 +1,12 @@
+# symbolic YAML link file
+- name: ./github-workflow.yml
+  hosts: all
+  vars:
+    mylink: "../.github/workflows/module3_task0.yml"
+    mysrc: "./github-workflow.yml"
+  taks:
+    - name: Creating a symlink
+      ansible.builin.file:
+      src: "{{ mysrc }}"
+      dest: "{{ mylink }}"
+      state: link
