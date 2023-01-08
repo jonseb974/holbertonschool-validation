@@ -136,6 +136,37 @@ Optional - The name of the workflow as it will appear in the "Actions" tab of th
 ```
 Optional - The name for workflow runs generated from the workflow, which will appear in the list of workflow runs on your repository's "Actions" tab. This example uses an expression with the github context to display the username of the actor that triggered the workflow run. For more information, see ["Workflow syntax for GitHub Actions."](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#run-name)
 
+### Build Workflow
+
+GitHub Actions uses YAML syntax to define the workflow. Each workflow is stored as a separate YAML file in your code repository, in a directory named .github/workflows.
+
+You can create an example workflow in your repository that automatically triggers a series of commands whenever code is pushed. In this workflow, GitHub Actions checks out the pushed code, installs the bats testing framework, and runs a basic command to output the bats version: bats -v.
+
+
+1. In your repository, create the .github/workflows/ directory to store your workflow files.
+
+2. In the .github/workflows/ directory, create a new file called learn-github-actions.yml and add the following code.
+```YAML
+    name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
+```
+
+
+3. Commit these changes and push them to your GitHub repository.
+
+Your new GitHub Actions workflow file is now installed in your repository and will run automatically each time someone pushes a change to the repository. To see the details about a workflow's execution history, see "Viewing the activity for a workflow run."(https://docs.github.com/en/actions/using-workflows/about-workflows#viewing-the-activity-for-a-workflow-run)
+
 ## Story
 
 > Continuing your journey as a Software Engineer at Awesome Inc., you want to provide early visibility on your work to your colleagues to allow you to iterate on the most important issues or improvements for the company.
