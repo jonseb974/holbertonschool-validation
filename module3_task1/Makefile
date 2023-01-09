@@ -1,5 +1,5 @@
 Publish=hugo
-SHELLCHECK=SHELLCHECK
+SHELLCHECK=shellcheck
 
 build: ## This command build the site.
 	$(Publish)
