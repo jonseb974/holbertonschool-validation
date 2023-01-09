@@ -5,22 +5,35 @@ on:
     branches:
       - main
   schedule:
-  - cron: 0 0 * * *
+  - cron: '0 0 * * *'
 jobs:
   module3_task1:
     runs-on: ubuntu-latest
     steps:
-      - name: Build
-        uses: $(Publish)
-      - name: Post
-        uses: $(Publish) new posts/$(POST_NAME).mds
-      - name: Lint
-        uses: $(SHELLCHECK)setup.sh >/dev/null 2>&1 || "Failed"
-      - name: Help
-        uses: cat Makefile | grep '##' | tr -d'##' | head -n -1
       - name: Checkout
         uses: actions/checkout@v3
+      
       - name: cd in to correct directory
         run: |
           cd module3_task1
           make help
+          
+      - name: build
+        run : |
+         cd module3_task1
+         make build
+      
+      - name: post
+        run : |
+          cd module3_task1
+          make post
+          
+      - name: lint
+        run: |
+          cd module3_task1
+          make lint
+          
+      - name: help
+        run: |
+           cd module3_tak1
+           make help
