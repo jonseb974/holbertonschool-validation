@@ -138,35 +138,37 @@ Optional - The name for workflow runs generated from the workflow, which will ap
 
 ### Build Workflow
 
-GitHub Actions uses YAML syntax to define the workflow. Each workflow is stored as a separate YAML file in your code repository, in a directory named .github/workflows.
+Now that you have set up your first workflow, let’s replace the command make help by the command make build.
 
-You can create an example workflow in your repository that automatically triggers a series of commands whenever code is pushed. In this workflow, GitHub Actions checks out the pushed code, installs the bats testing framework, and runs a basic command to output the bats version: bats -v.
+The result should be a failed pipeline with an error like this one:
 
+As documented by GitHub Actions, the machines where the workflow’s jobs are run already have some tools installed.
 
-1. In your repository, create the .github/workflows/ directory to store your workflow files.
+You can see that some tools required to build our application, like make or Golang, are available. But others are missing.
 
-2. In the .github/workflows/ directory, create a new file called learn-github-actions.yml and add the following code.
-```YAML
-    name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
-jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+There are 2 different strategies to solve this challenge, each one with its pro and cons:
 ```
+    Install the tools during the build:
+        ✅ It ensures that you have an automated and always up-to-date installation system
+        ❌ but it slows down the builds (you have to wait for all tools to be installed while you want a feedback as soon as possible)
 
+    Ensure that the workflow is running inside a pre-built environment with all the required tools
+        ✅ Fast feedback: you don’t need to wait for tools installation
+        ❌ Maintenance overhead as you need to manage the pre-built environment
+```
+For this module, we’ll use the 1st strategy, and the 2nd will be covered in the “Docker” module.
 
-3. Commit these changes and push them to your GitHub repository.
+It should be an easy step: you already wrote a script setup.sh which role was to install Hugo in the production environment: let’s reuse this work!
 
-Your new GitHub Actions workflow file is now installed in your repository and will run automatically each time someone pushes a change to the repository. To see the details about a workflow's execution history, see "Viewing the activity for a workflow run."(https://docs.github.com/en/actions/using-workflows/about-workflows#viewing-the-activity-for-a-workflow-run)
+You are expected to create a new workflow named module3_task1 from the previous workflow.
 
+This new workflow should execute the following targets as distinct steps: build.
+
+Regarding the tooling, you have to:
+
+    Ensure that the workflow is executed into an Ubuntu 18.04 execution environment
+    Ensure that all the required tools are installed prior to any make target, by executing the script setup.sh
+        ⚠️ The script should be modified to only install missing tools (no make target are expected)
 ## Story
 
 > Continuing your journey as a Software Engineer at Awesome Inc., you want to provide early visibility on your work to your colleagues to allow you to iterate on the most important issues or improvements for the company.
