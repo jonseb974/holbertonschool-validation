@@ -11,6 +11,14 @@ jobs:
   module3_task1:
     runs-on: ubuntu-latest
     steps:
+    - name: Build
+        uses: $(Publish)
+      - name: Post
+        uses: $(Publish) new posts/$(POST_NAME).mds
+      - name: Lint
+        uses: $(SHELLCHECK)setup.sh >/dev/null 2>&1 || "Failed"
+      - name: Help
+        uses: cat Makefile | grep '##' | tr -d'##' | head -n -1
       - name: Checkout
         uses: actions/checkout@v3
       - name: cd in to correct directory
