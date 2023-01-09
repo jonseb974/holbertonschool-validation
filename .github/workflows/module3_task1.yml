@@ -13,10 +13,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
-      - name: cd in to correct directory
+      - name: Setup Hugo
         run: |
           cd module3_task1
-          make help
+          sudo ./setup.sh
           
       - name: build
         run : |
@@ -35,5 +35,10 @@ jobs:
           
       - name: help
         run: |
-           cd module3_tak1
+           cd module3_task1
            make help
+      
+      - name: clean
+        run: |
+           cd module3_task1
+           make clean
