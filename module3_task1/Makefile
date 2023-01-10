@@ -14,12 +14,5 @@ post: ## This command line create a new post, the sed comment modified the file'
 lint: ## setup check
 	$(SHELLCHECK) setup.sh >/dev/null 2>&1 || "Lint Failed"
 
-integration-tests: ## check the localhost
-	hugo
-	ls dist/
-
-validate: ## check directory
-	pwd
-
 help: ## This command line display the specified targets.
 	cat Makefile | grep '##' | tr -d '##' | head -n -1
