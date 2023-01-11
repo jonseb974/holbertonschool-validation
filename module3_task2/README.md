@@ -35,7 +35,7 @@ You should have a basic knowledge of the following concepts
     - Know how to write a valid YAML file
 
 
-### Make/Makefile usage:
+### Make/Makefile usage
 
     - Executing tasks through make targets
     - Default target and PHONY target
