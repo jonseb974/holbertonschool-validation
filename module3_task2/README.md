@@ -10,7 +10,8 @@ the goals and the value.
 After this project, you should be able to:
 
 Implement Continuous Integration workflows using GitHub Actions
-Tell if a given GitHub Action’s workflow is about Continuous Integration (CI),
+Tell if a given GitHub Action’s workflow is about
+Continuous Integration (CI),
 or Continuous Delivery (CD)
 or Continuous Deployment (skill of context analysis)
 Understand the challenges of build reproductibility, through
@@ -23,7 +24,6 @@ Continuously deploy a static web site to
 
 
 ### Prerequisites
-
 
 
 ### Concepts
@@ -94,7 +94,7 @@ and run a series of one or more steps.
 - 3. Each step can either run a script that you define or run an action,
 which is a reusable extension that can simplify your workflow
 
-For more information on these basic components, see 
+For more information on these basic components, see
 ["Understanding GitHub Actions."]
 (https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#the-components-of-github-actions)
 ![]
@@ -126,7 +126,7 @@ events-that-trigger-workflows)
 
 ### Workflow syntax
 Workflow are defined using YAML.
-For the full reference of the YAML syntax for authoring workflows, see 
+For the full reference of the YAML syntax for authoring workflows, see
 ["Workflow syntax for GitHub Actions."]
 (https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#about-yaml-syntax-for-workflows)
 
@@ -140,7 +140,7 @@ triggers a series of commands whenever code is pushed.
 In this workflow, GitHub Actions checks out the pushed code,
 installs the [bats](https://www.npmjs.com/package/bats) testing framework,
 and runs a basic command to output the bats version: `bats -v`.
-1.  In your repository, create the `.github/workflows/` 
+1.  In your repository, create the `.github/workflows/`
 directory to store your workflow files.
 2.  In the `.github/workflows/` `directory,
 create a new file called` `learn-github-actions.yml
@@ -181,15 +181,16 @@ this section explains each line of the introduction's example:
    name: learn-github-actions
 ```
 Optional - The name of the workflow as it will
-appear in the "Actions" tab of the GitHub repository. 
+appear in the "Actions" tab of the GitHub repository.
 
 ```ruby
    run-name:  ${{ github.actor }} is learning GitHub Actions
 ```
 Optional - The name for workflow runs generated from the workflow,
 which will appear in the list of workflow runs on
-your repository's "Actions" tab. 
-This example uses an expression with the github context to display the username
+your repository's "Actions" tab.
+This example uses an expression with the github context
+to display the username
 of the actor that triggered the workflow run.
 For more information, see
 ["Workflow syntax for GitHub Actions."]
@@ -250,7 +251,8 @@ Regarding the tooling, you have to:
 
 > Continuing your journey as a Software Engineer at Awesome Inc.,
 you want to provide early visibility on your work to your colleagues
-to allow you to iterate on the most important issues or improvements for the company.
+to allow you to iterate on the most important issues or improvements
+for the company.
 > By defining a Software Delivery Pipeline with automated tasks,
 you’ll ensure that the collaboration between teams is improved,
 and that your team grows in maturity while providing an efficient
