@@ -1,6 +1,6 @@
 #!/bin/bash
-sudo apt-get update && apt-get install -y hugo make
-sudo apt-get install curl -y 
-sudo curl -L https://github.com/gohugoio/hugo/releases/download/v0.109.0/hugo_extended_0.109.0_Linux-amd64.deb -o last.deb
-sudo apt-get install ./last.deb
-# sudo rm last.deb
+apt-get update && apt-get install -y hugo make
+apt-get install curl -y 
+curl -L https://github.com/gohugoio/hugo/releases/download/v0.109.0/hugo_extended_0.109.0_Linux-amd64.deb -o last.deb
+apt-get install ./last.deb
+# rm last.deb
