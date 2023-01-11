@@ -20,7 +20,7 @@ To unarchive a file use
 
 4. How to “quickly” verify that the application is running (health check)?
 Use the built-in health check feature.
-     First create a file 'health.txt', containing a string example: "OK"
+     First create a file 'health.txt', containing a string example "OK"
      in the root of the Hugo project.
-     - To access the health check endpoint http://localhost:1313/health
+     - To access the health check endpoint [http://localhost:1313/health]
 The endpoint will return the string "OK", in the case of healthy application\n
