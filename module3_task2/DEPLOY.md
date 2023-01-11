@@ -8,7 +8,7 @@
 To archive a file use
      - zip my_zip_file file1 file2 file3
 
-To unarchive a file use:
+To unarchive a file use
      - unzip my_zip_file file1 file2 file3
 
 2. What are the commands to start and stop the application?
@@ -23,4 +23,4 @@ Use the built-in health check feature.
      First create a file 'health.txt', containing a string example: "OK"
      in the root of the Hugo project.
      - To access the health check endpoint http://localhost:1313/health
-The endpoint will return the string "OK", in the case of healthy application.\n
+The endpoint will return the string "OK", in the case of healthy application\n
