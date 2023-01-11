@@ -37,9 +37,9 @@ You should have a basic knowledge of the following concepts
 
 ### Make/Makefile usage
 
-    - Executing tasks through make targets
-    - Default target and PHONY target
-    - Makefile’s variables and macro syntax
+- Executing tasks through make targets
+- Default target and PHONY target
+- Makefile’s variables and macro syntax
 
 ### Tooling
 ### This project needs the following tools / services:
