@@ -21,4 +21,5 @@ Use the built-in health check feature.
      First create a file 'health.txt', containing a string example: "OK"
      in the root of the Hugo project.
      - To access the health check endpoint http://localhost:1313/health.
-     yam- For a stable application the endpoint will return the string "OK".
+     For a stable application the endpoint will return the string "OK", in the
+     case of healthy application.
