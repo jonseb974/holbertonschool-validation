@@ -7,7 +7,7 @@ on:
   - cron: '0 0 * * *'
 jobs:
   module3_task1:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
