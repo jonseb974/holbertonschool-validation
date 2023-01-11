@@ -5,7 +5,7 @@
      The zip  file generally uses the file extensions.zip
      or ZIP and the MIME media type application_zip.
 
-To archive a file use:
+To archive a file use
      - zip my_zip_file file1 file2 file3
 
 To unarchive a file use:
@@ -23,5 +23,4 @@ Use the built-in health check feature.
      First create a file 'health.txt', containing a string example: "OK"
      in the root of the Hugo project.
      - To access the health check endpoint http://localhost:1313/health
-For a stable application the endpoint will return the string "OK",
-in the case of healthy application.
+The endpoint will return the string "OK", in the case of healthy application.\n
