@@ -1,7 +1,9 @@
 1. What is in an the archive and how to unarchive it?
-     - According to wikipedia, an archive is a file that contain one or more files or directories
+     - According to wikipedia, an archive is a file that contain
+     one or more files or directories
      that may have been compressed.
-     The zip  file generally uses the file extensions.zip or ZIP and the MIME media type application/zip.
+     The zip  file generally uses the file extensions.zip
+     or ZIP and the MIME media type application_zip.
 
 To archive a file use this commands:
      - zip my_zip_file file1 file2 file3
@@ -20,6 +22,6 @@ To unarchive a file use:
 Use the built-in health check feature.
      First create a file 'health.txt', containing a string example: "OK"
      in the root of the Hugo project.
-     - To access the health check endpoint http://localhost:1313/health.
+     - To access the health check endpoint http://localhost:1313/health
      For a stable application the endpoint will return the string "OK", in the
      case of healthy application.
