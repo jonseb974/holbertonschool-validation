@@ -12,9 +12,12 @@ post: ## This command line create a new post, the sed comment modified the file'
 	sed -i 's/title: .*/title: "$(POST_TITLE)"/' content/posts/$(POST_NAME).md
 
 package: ## This command line download a zip archive to zip.
-	zip awesome-website.zip dist/*
+	make build
+	zip awesome-website.zip dist/
 
 lint: ## setup check
+	markdownlint README.md
+	markdownlint DEPLOY.md
 	$(SHELLCHECK) setup.sh >/dev/null 2>&1 || "Lint Failed"
 
 help: ## This command line display the specified targets.
