@@ -7,7 +7,7 @@ This project aims at practicing with Continuous Integration
 (CI) / Delivery (CD) / Deployment to understand the differences,
 the goals and the value.
 
-After this project, you should be able to:
+After this project, you should be able to
 
 Implement Continuous Integration workflows using GitHub Actions
 Tell if a given GitHub Action’s workflow is about
@@ -19,8 +19,8 @@ management of build dependencies using APT packages, NPM, Python3’s pip,
 and direct binary downloads.
 Build collaboratively a Software Delivery Pipeline and produce released
 artifacts, including documenting the changes and the usage
-Continuously deploy a static web site to 
-[Netlify](https://intranet.hbtn.io/rltoken/mimiujMHFSaj0xxHoDLhSQ).
+Continuously deploy a static web site to[Netlify]
+(https://intranet.hbtn.io/rltoken/mimiujMHFSaj0xxHoDLhSQ).
 
 
 ### Prerequisites
