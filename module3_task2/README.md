@@ -28,18 +28,18 @@ Continuously deploy a static web site to[Netlify]
 
 ### Concepts
 
-You should have a basic knowledge of the following concepts:
-- What is and how to use git tags
-- Basics of what is and how to use a GitHub “Release”
-- What is and how to create/use a ZIP archive
-- Know how to write a valid YAML file
+You should have a basic knowledge of the following concepts
+    - What is and how to use git tags
+    - Basics of what is and how to use a GitHub “Release”
+    - What is and how to create/use a ZIP archive
+    - Know how to write a valid YAML file
 
 
 ### Make/Makefile usage:
 
-- Executing tasks through make targets
-- Default target and PHONY target
-- Makefile’s variables and macro syntax
+    - Executing tasks through make targets
+    - Default target and PHONY target
+    - Makefile’s variables and macro syntax
 
 ### Tooling
 ### This project needs the following tools / services:
