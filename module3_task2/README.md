@@ -100,9 +100,6 @@ and run a series of one or more steps.
 - 3. Each step can either run a script that you define or run an action,
 which is a reusable extension that can simplify your workflow
 
-For more information on these basic components, see ["Understanding GitHub Actions."](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#the-components-of-github-actions)
-![](https://docs.github.com/assets/cb-25535/images/help/images/![alt text](https://www.pngwing.com/en/free-png-sxwft))/overview-actions-simple.png)
-
 ### Triggering a workflow
 
 Workflow triggers are events that cause a workflow to run. These events can be:
