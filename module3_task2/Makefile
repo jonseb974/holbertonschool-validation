@@ -7,7 +7,7 @@ build: ## This command build the site.
 clean: ## This command line delete the specified file.
 	rm -r dist/*
 
-post: ## This command line create a new post, the sed comment modified the file's content.
+post: ## Create a new post, the sed modified the file's content.
 	$(Publish) new posts/$(POST_NAME).md
 	sed -i 's/title: .*/title: "$(POST_TITLE)"/' content/posts/$(POST_NAME).md
 
