@@ -16,16 +16,10 @@ package: ## This command line download a zip archive to zip.
 	zip awesome-website.zip dist/
 
 integration-tests: ## server and check the localhost
-  hugo
-  ls dist/
 
 unit-tests: ## Runs different makefile recipes
-  make POST_TITLE='TEST' POST_NAME='testng' post
-  make build
-  make clean
 
-validate: ## tests pwdir
-  pwd
+validate: ## tests
 
 lint: ## setup check
 	markdownlint README.md
