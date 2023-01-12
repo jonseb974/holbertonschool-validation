@@ -20,5 +20,9 @@ lint: ## setup check
 	markdownlint DEPLOY.md
 	$(SHELLCHECK) setup.sh >/dev/null 2>&1 || "Lint Failed"
 
+markdownlint: ## update lint
+	markdownlint README.md
+	markdownlint DEPLOY.md
+
 help: ## This command line display the specified targets.
 	cat Makefile | grep '##' | tr -d '##' | head -n -1
