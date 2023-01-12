@@ -13,23 +13,23 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Hugo
         run: |
-          cd module3_task2
+          cd module3_task2/
           sudo ./setup.sh
       - name: build
         run: |
-         cd module3_task2
+         cd module3_task2/
          make build
       - name: post
         run: |
-          cd module3_task2
+          cd module3_task2/
           make POST_TITLE="Test Title" POST_NAME="Test-name" post
       - name: lint
         run: |
-          cd module3_task2
+          cd module3_task2/
           make lint
       - name: help
         run: |
-           cd module3_task2
+           cd module3_task2/
            make help
       - name: archive build
         if: ${{ success() }}
@@ -39,5 +39,5 @@ jobs:
           path: module3_task2/awesome-website.zip
       - name: clean
         run: |
-           cd module3_task2
+           cd module3_task2/
            make clean
