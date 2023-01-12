@@ -20,6 +20,11 @@ lint: ## setup check
 	markdownlint DEPLOY.md
 	$(SHELLCHECK) setup.sh >/dev/null 2>&1 || "Lint Failed"
 
+unit-tests: ## makefile recipes
+	make POST_TITLE='TEST' POST_NAME='test-file' post
+	make build
+	make clean
+
 markdownlint: ## update lint
 	markdownlint README.md
 	markdownlint DEPLOY.md
