@@ -1,7 +1,7 @@
 Publish=hugo
 SHELLCHECK=shellcheck
 
-build: ## This command build the site.
+build: ## Build the site.
 	$(Publish)
 
 clean: ## This command line delete the specified file.
