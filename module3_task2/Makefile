@@ -16,7 +16,7 @@ package: ## This command line download a zip archive to zip.
 	zip awesome-website.zip dist/
 
 test: ## unit-test
-	make unit-test
+	make unit-tests
 
 lint: ## setup check
 	markdownlint README.md
