@@ -20,11 +20,11 @@ integration-tests: ## server and check the localhost
   ls dist/
 
 unit-tests: ## Runs different makefile recipes
-  make POST_TITLE='TEST' POST_NAME='this-is-a-test' post
+  make POST_TITLE='TEST' POST_NAME='testng' post
   make build
   make clean
 
-validate: ## Tests dir
+validate: ## tests pwdir
   pwd
 
 lint: ## setup check
