@@ -15,8 +15,17 @@ package: ## This command line download a zip archive to zip.
 	make build
 	zip awesome-website.zip dist/
 
-test: ## unit-test
-	make unit-tests
+integration-tests: ## server and check the localhost
+  hugo
+  ls dist/
+
+unit-tests: ## Runs different makefile recipes
+  make POST_TITLE='TEST' POST_NAME='this-is-a-test' post
+  make build
+  make clean
+
+validate: ## Tests dir
+  pwd
 
 lint: ## setup check
 	markdownlint README.md
