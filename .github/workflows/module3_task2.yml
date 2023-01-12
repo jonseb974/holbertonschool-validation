@@ -25,6 +25,7 @@ jobs:
           make POST_TITLE="Test Title" POST_NAME="Test-name" post
       - name: unit-tests
         run: |
+          cd module3_task2/
           make unit-tests
       - name: lint
         run: |
