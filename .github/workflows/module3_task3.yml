@@ -50,6 +50,14 @@ jobs:
         with:
           name: upload-package
           path: module3_task3/awesome-website.zip
+      - name: release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name:
+            1.0.0
+          files:
+            /module3_task3/DEPLOY.md
+            /module3_task3/awesome-website.zip
       - name: clean
         run: |
            cd module3_task3/
