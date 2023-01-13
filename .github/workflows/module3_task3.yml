@@ -1,0 +1,56 @@
+---
+name: module3_task2
+on:
+  push:
+    branches: [main, master]
+  schedule:
+    - cron: '0 0 * * *'
+jobs:
+  module3_task3:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Hugo
+        run: |
+          cd module3_task3/
+          sudo ./setup.sh
+      - name: build
+        run: |
+          cd module3_task3/
+          make build
+      - name: post
+        run: |
+          cd module3_task3/
+          make POST_TITLE="Test Title" POST_NAME="Test-name" post
+      - name: lint
+        run: |
+          cd module3_task3/
+          make lint
+      - name: integration-tests
+        run: |
+          cd module3_task3/
+          make integration-tests
+          make package
+      - name: unit-tests
+        run: |
+          cd module3_task3/
+          make unit-tests
+      - name: validate
+        run: |
+          cd module3_task3/
+          make validate
+      - name: help
+        run: |
+           cd module3_task3/
+           make help
+      - name: archive build
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: upload-package
+          path: module3_task3/awesome-website.zip
+      - name: clean
+        run: |
+           cd module3_task3/
+           make clean
