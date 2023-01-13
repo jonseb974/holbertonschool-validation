@@ -9,6 +9,8 @@ To archive a file use zip my_zip_file file1 file2 file3
 
 To unarchive a file use unzip my_zip_file file1 file2 file3
 
+Run unzip awesome-website.zip
+
 What are the commands to start and stop the application?
 
 hugo server (start the application)
