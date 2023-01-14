@@ -20,7 +20,7 @@ permissions:
   contents: read
 
 jobs:
-  update_release_draft:
+  release_drafter:
     permissions:
       # write permission is required to create a github release
       contents: write
