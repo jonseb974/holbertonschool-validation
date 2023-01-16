@@ -86,5 +86,5 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
-release_drafter t4
-../.github/workflows/release_drafter.yml
+# release_drafter t4
+# ../.github/workflows/release_drafter.yml
