@@ -1,4 +1,3 @@
-
 # Module 1: Introduction to DevOps: Automate Everything to
 
 # Focus on What Really Matters
@@ -21,7 +20,8 @@ management of build dependencies using APT packages, NPM, Python3’s pip,
 and direct binary downloads.
 Build collaboratively a Software Delivery Pipeline and produce released
 artifacts, including documenting the changes and the usage
-Continuously deploy a static web site to[Netlify](https://intranet.hbtn.io/rltoken/mimiujMHFSaj0xxHoDLhSQ).
+Continuously deploy a static web site
+to[Netlify](https://intranet.hbtn.io/rltoken/mimiujMHFSaj0xxHoDLhSQ).
 
 ### Prerequisites
 
@@ -115,8 +115,10 @@ when a push is made to the default branch of your repository,
 when a release is created, or when an issue is opened.
 
 For more information,
-see ["Triggering a workflow"](https://docs.github.com/en/actions/using-workflows/triggering-a-workflow),
-and for a full list of events, see ["Events that trigger workflows."](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
+see
+["Triggering a workflow"](https://docs.github.com/en/actions/using-workflows/triggering-a-workflow),
+and for a full list of events, see
+["Events that trigger workflows."](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
 
 ### Workflow syntax
 
@@ -165,7 +167,8 @@ and add the following code.`
 Your new GitHub Actions workflow file is now installed in your repository
 and will run automatically each time someone pushes a change to the repository.
  To see the details about a workflow's execution history,
- see ["Viewing the activity for a workflow run."](https://docs.github.com/en/actions/using-workflows/about-workflows#viewing-the-activity-for-a-workflow-run)
+ see
+ ["Viewing the activity for a workflow run."](https://docs.github.com/en/actions/using-workflows/about-workflows#viewing-the-activity-for-a-workflow-run)
 
 ## [Understanding the workflow file]
 
