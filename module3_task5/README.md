@@ -1,6 +1,6 @@
 # Module 1: Introduction to DevOps: Automate Everything to
 
-# Focus on What Really Matters
+## Focus on What Really Matters
 
 ## Learning Objectives
 
@@ -50,7 +50,7 @@ You should have a basic knowledge of the following concepts:
 - [yq](https://mikefarah.gitbook.io/yq/)
 - [shellcheck](https://github.com/koalaman/shellcheck)
 
-# How to use the make file
+## How to use the make file
 
 ## Lifecycle
 
