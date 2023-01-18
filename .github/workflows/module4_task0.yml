@@ -1,0 +1,88 @@
+---
+name: module4_task0
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    types: [opened, reopened]
+  schedule:
+    - cron: '0 0 * * *'
+jobs:
+  module4_task0:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Hugo
+        run: |
+          cd module4_task0/
+          sudo ./setup.sh
+      - name: build
+        run: |
+          cd module4_task0/
+          make build
+      - name: post
+        run: |
+          cd module4_task0/
+          make POST_TITLE="Test Title" POST_NAME="Test-name" post
+      - name: lint
+        run: |
+          cd module4_task0/
+          make lint
+      - name: integration-tests
+        run: |
+          cd module4_task0/
+          make integration-tests
+          make package
+      - name: unit-tests
+        run: |
+          cd module4_task0/
+          make unit-tests
+      - name: validate
+        run: |
+          cd module4_task0/
+          make validate
+      - name: help
+        run: |
+           cd module4_task0/
+           make help
+      - name: archive build
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: upload-package
+          path: module4_task0/awesome-website.zip
+      - name: release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name:
+            1.0.1
+          files:
+            /module4_task0/DEPLOY.md
+            /module4_task0/awesome-website.zip
+      - name: clean
+        run: |
+           cd module4_task0/
+           make clean
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name:
+            1.0.1
+          files: |
+            /module4_task0/DEPLOY.md
+            /module4_task0/awesome-website.zip
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2
+        with:
+          publish-dir: './dist'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "🎉 Published on 🚀 Deployed on"
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
