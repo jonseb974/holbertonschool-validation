@@ -3,6 +3,7 @@ SHELLCHECK=shellcheck
 
 build: ## Build the site.
 	$(Publish)
+	touch awesome-api
 
 clean: ## This command line delete the specified file.
 	rm -r dist/*
