@@ -28,10 +28,11 @@ unit-tests: ## Runs different makefile recipes
 
 validate: ## tests
 	pwd
+
 lint: ## setup check
 	markdownlint README.md
 	markdownlint DEPLOY.md
-	$(SHELLCHECK) setup.sh >/dev/null 2>&1 || "Lint Failed"
+	$(SHELLCHECK) setup.sh >/dev/null 2>&1 || echo "Lint Failed"
 
 markdownlint: ## update lint
 	markdownlint README.md
