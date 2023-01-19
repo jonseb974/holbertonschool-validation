@@ -69,7 +69,7 @@ jobs:
           publish-dir: './module4_task0/dist'
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "🎉 Published on" 
+          deploy-message: "🎉 Published on"
           publish-message: "🚀 Deployed on"
           enable-pull-request-comment: true
           enable-commit-comment: true
