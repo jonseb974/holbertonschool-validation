@@ -1,7 +1,7 @@
 Publish=hugo
 SHELLCHECK=shellcheck
 
-build: ## Build the site.
+build: ## Build the site
 	$(Publish)
 	touch awesome-api
 
@@ -17,8 +17,15 @@ package: ## This command line download a zip archive to zip.
 	zip awesome-website.zip dist/
 
 integration-tests: ## server and check the localhost
+	hugo
+	touch coverage-integrations.out
+	ls dist/
 
 unit-tests: ## Runs different makefile recipes
+	make POST_TITLE='TEST' POST_NAME='test file' post
+	make build
+	make clean
+	touch coverage-units.out
 
 validate: ## tests
 
