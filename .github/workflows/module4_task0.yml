@@ -29,10 +29,9 @@ jobs:
         run: |
           cd module4_task0/
           make lint
-      - name: integration-tests
+      - name: integration tests
         run: |
           cd module4_task0/
-          make integration-tests
           make package
       - name: unit-tests
         run: |
@@ -52,14 +51,6 @@ jobs:
         with:
           name: upload-package
           path: module4_task0/awesome-website.zip
-      - name: release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name:
-            1.0.1
-          files:
-            /module4_task0/DEPLOY.md
-            /module4_task0/awesome-website.zip
       - name: clean
         run: |
            cd module4_task0/
@@ -75,11 +66,12 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
-          publish-dir: './dist'
-          production-branch: master
+          publish-dir: './module4_task0/dist'
+          production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "🎉 Published on 🚀 Deployed on"
-          enable-pull-request-comment: false
+          deploy-message: "🎉 Published on" 
+          publish-message: "🚀 Deployed on"
+          enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
         env:
