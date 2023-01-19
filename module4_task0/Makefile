@@ -3,7 +3,7 @@ SHELLCHECK=shellcheck
 
 build: ## Build the site
 	$(Publish)
-	touch ./awesome-api
+	touch awesome-api
 
 clean: ## This command line delete the specified file.
 	rm -r dist/*
@@ -18,13 +18,13 @@ package: ## This command line download a zip archive to zip.
 
 integration-tests: ## server and check the localhost
 	hugo
-	touch ./coverage-integrations.out
+	touch coverage-integrations.out
 	ls dist/
 
 unit-tests: ## Runs different makefile recipes
 	make build
 	make clean
-	touch ./coverage-units.out
+	touch coverage-units.out
 
 validate: ## tests
 	pwd
