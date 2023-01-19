@@ -30,8 +30,7 @@ validate: ## tests
 	pwd
 
 lint: ## setup check
-	markdownlint README.md
-	markdownlint DEPLOY.md
+	markdownlint README.md DEPLOY.md
 	yamllint "$(SHELLCHECK)" setup.sh >/dev/null 2>&1 || echo "Lint Failed"
 
 markdownlint: ## update lint
