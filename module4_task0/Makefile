@@ -28,7 +28,7 @@ unit-tests: ## Runs different makefile recipes
 	touch coverage-units.out
 
 validate: ## tests
-
+	pwd
 lint: ## setup check
 	markdownlint README.md
 	markdownlint DEPLOY.md
