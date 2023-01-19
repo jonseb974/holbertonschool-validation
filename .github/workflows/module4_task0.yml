@@ -25,7 +25,7 @@ jobs:
         run: |
           cd module4_task0/
           make POST_TITLE="Test Title" POST_NAME="Test-name" post
-      - name: markdownlint
+      - name: lint
         run: |
           cd module4_task0/
           make lint
